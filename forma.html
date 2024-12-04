@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>форма</title>
+</head>
+<body>
+<a href="index.html"><img src="logo.png" alt="Логотип" height=70 width=100 align="left"></a>
+<p align = center>Ультра мега крутая форма</p>
+<img src="kakava.png" alt="Изображение" style="float:left; width: 750px;">
+
+<p>Расскажи о себе, это надо для правильного вкуса какавы</p>
+<form id="contactForm">
+<label for="name">Имя:   </label>
+<input type="text" id="name" required><br><br>
+<label for="name">Возраст:</label>
+<input type="text" id="age" required><br><br>
+<label for="name">Пол:</label>
+<input type="text" id="sex" required><br><br>
+<label for="feedback">Пожелания:</label>
+<textarea id="feedback" required></textarea><br>
+<button type="submit">Отправить</button>
+</form>
+<div id="result" style="margin-top: 20px;"></div>
+ <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let age = document.getElementById('age').value;
+			let sex = document.getElementById('sex').value;
+			let feedback = document.getElementById('feedback').value;
+
+            document.getElementById('result').innerHTML = `<p>Ваши данные:</p><p>Имя: ${name}</p><p>Возраст: ${age}</p><p>Пол: ${sex}</p><p>Пожелания: ${feedback}</p><p><a href="kakava1.png">Твоя какава</a></p>`;
+        });
+    </script>
+</body>
+</html>
